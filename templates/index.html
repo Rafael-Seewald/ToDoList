@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+    <div id="container">
+
+        <div id="todoapp">
+            <h2>To-do list</h2>
+            <form id="task" action="{{ url_for('add') }}" method="post">
+                <input type="text" required name="task" placeholder="Add your text" maxlength="29" id="text">
+                <button type="submit">Add</button>
+            </form>
+
+            <ul class="task-list">
+                {% for task_index in range(todos|length) %}
+                {% set task = todos[task_index] %}
+                <li class="{% if task['status'] %}checked{% else %}unchecked{% endif %}">
+                    <form action="{{ url_for('toggle', task_index=task_index) }}" method="post">
+                        <button type="submit" style="all: unset; cursor: pointer;">
+                            <p id="task">{{ task['task'] }}</p>
+                        </button>
+                    </form>
+                    <form action="{{ url_for('delete_task', task_index=task_index) }}" method="post">
+                        <button type="submit" class="delete-task">x</button>
+                    </form>
+                </li>
+                 {% endfor %}
+            </ul>
+            
+            <hr>
+            <div class="info">
+                <p>Total tasks: {{ count }}</p>
+                <form action="{{ url_for('delete_all') }}" method="POST">
+                    <button id="delete" type="submit">Delete All</button>
+                </form>
+                <p><a target="_blank" href="https://www.linkedin.com/in/rafael-vin%C3%ADcius-seewald-2341432b8/">Made by Rafael</a></p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
