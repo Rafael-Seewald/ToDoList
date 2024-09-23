@@ -13,9 +13,9 @@
 </h1>
 <hr>
 <h1 align="center"> About To-Do-List </h1>
-<h4>Our mission is to give everyone a website where you won't have to remember things once they are written down like a checklist.
-We believe that everyone deserves to have a chance to organize yourself, and with that the day-to-day would be way better and easier.
-So you won't need to keep remembering the things you have to do, and you won't have to face the consequences of forgetting these things.</h4>
+<h4>Our mission is to give everyone a website where you won't have to remember things once they are written down like a checklist.</h4>
+<h4>We believe that everyone deserves to have a chance to organize yourself, and with that the day-to-day would be way better and easier.</h4>
+<h4>So you won't need to keep remembering the things you have to do, and you won't have to face the consequences of forgetting these things.</h4>
 <br>
 
 <p>Database included.</p>
